@@ -104,6 +104,12 @@ Landmarks:
 	landmark  12, 100, TohjoFallsName
 	landmark  20,  68, Route28Name
 	landmark 140, 116, FastShipName
+	assert_table_length VOLOGT_LANDMARK
+	landmark  16,  16, CityAName
+	landmark  16,  48, Route47Name
+	landmark  16,  80, CityBName
+	landmark  48,  80, Route48Name
+	landmark  80,  80, CityCName
 	assert_table_length NUM_LANDMARKS
 
 NewBarkTownName:     db "NEW BARK¯TOWN@"
@@ -208,3 +214,8 @@ TohjoFallsName:      db "TOHJO FALLS@"
 UndergroundName:     db "UNDERGROUND@"
 BattleTowerName:     db "BATTLE¯TOWER@"
 SpecialMapName:      db "SPECIAL@"
+CityAName:           db "CITY¯A@"
+Route47Name:         db "ROUYE 47@"
+CityBName:           db "CITY¯B@"
+Route48Name:         db "ROUTE 48@"
+CityCName:           db "CITY¯C@"

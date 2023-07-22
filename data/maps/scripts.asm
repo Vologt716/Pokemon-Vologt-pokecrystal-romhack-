@@ -484,3 +484,9 @@ SECTION "Map Scripts 25", ROMX
 
 INCLUDE "maps/SilverCaveOutside.asm"
 INCLUDE "maps/Route10North.asm"
+INCLUDE "maps/AlphaTown.asm"
+INCLUDE "maps/UwsLab.asm"
+INCLUDE "maps/RoutePsi.asm"
+INCLUDE "maps/BetaTown.asm"
+INCLUDE "maps/RouteOmega.asm"
+INCLUDE "maps/GammaTown.asm"

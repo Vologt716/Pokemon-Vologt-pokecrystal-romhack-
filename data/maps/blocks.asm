@@ -1045,3 +1045,23 @@ BetaBlank_Blocks: ; unreferenced
 
 GoldenrodDeptStoreRoof_Blocks:
 	INCBIN "maps/GoldenrodDeptStoreRoof.blk"
+
+SECTION "Map Blocks 4", ROMX
+
+AlphaTown_Blocks:
+	INCBIN "maps/AlphaTown.blk"
+
+UwsLab_Blocks:
+	INCBIN "maps/UwsLab.blk"
+
+RoutePsi_Blocks:
+	INCBIN "maps/RoutePsi.blk"
+	
+BetaTown_Blocks:
+	INCBIN "maps/BetaTown.blk"
+	
+RouteOmega_Blocks:
+	INCBIN "maps/RouteOmega.blk"
+	
+GammaTown_Blocks:
+	INCBIN "maps/GammaTown.blk"

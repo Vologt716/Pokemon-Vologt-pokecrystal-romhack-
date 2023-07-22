@@ -3,6 +3,7 @@
 	const PLAYERSHOUSE2F_DOLL_1
 	const PLAYERSHOUSE2F_DOLL_2
 	const PLAYERSHOUSE2F_BIG_DOLL
+	const PLAYERSHOUSE2F_FISHER
 
 PlayersHouse2F_MapScripts:
 	def_scene_scripts
@@ -91,6 +92,10 @@ PlayersHousePCScript:
 .Warp:
 	warp NONE, 0, 0
 	end
+	
+FatherScript:
+	jumptextfaceplayer Text_Father
+
 
 PlayersRadioText1:
 	text "PROF.OAK'S #MON"
@@ -110,6 +115,17 @@ PlayersRadioText3:
 PlayersRadioText4:
 	text "#MON!"
 	line "#MON CHANNEL…"
+	done
+	
+	Text_Father:
+	text "DAD: Right."
+	line "All boys leave"
+	cont "home someday."
+	cont "It said so on TV."
+
+	para "PROF.UW, next"
+	line "door, is looking"
+	cont "for you."
 	done
 
 PlayersHouse2F_MapEvents:
@@ -131,3 +147,4 @@ PlayersHouse2F_MapEvents:
 	object_event  4,  4, SPRITE_DOLL_1, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PlayersHouseDoll1Script, EVENT_PLAYERS_HOUSE_2F_DOLL_1
 	object_event  5,  4, SPRITE_DOLL_2, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PlayersHouseDoll2Script, EVENT_PLAYERS_HOUSE_2F_DOLL_2
 	object_event  0,  1, SPRITE_BIG_DOLL, SPRITEMOVEDATA_BIGDOLL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PlayersHouseBigDollScript, EVENT_PLAYERS_HOUSE_2F_BIG_DOLL
+	object_event  6,  1, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, FatherScript, EVENT_PLAYERS_HOUSE_2F_FATHER

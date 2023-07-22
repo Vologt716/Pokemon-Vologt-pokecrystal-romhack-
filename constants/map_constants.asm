@@ -501,4 +501,13 @@ ENDM
 	map_const ROUTE_31_VIOLET_GATE,                         5,  4 ; 11
 	endgroup
 
-DEF NUM_MAP_GROUPS EQU const_value ; 26
+	newgroup FIRST_VOLOGT                                         ; 27
+	map_const ALPHA_TOWN,                                   9,  9 ;  1
+	map_const ROUTE_PSI,                                    9, 16 ;  2
+	map_const BETA_TOWN,                                    9,  9 ;  3
+	map_const ROUTE_OMEGA,                                 16,  9 ;  4
+	map_const GAMMA_TOWN,                                   9,  9 ;  5
+	map_const UWS_LAB,                                      5,  6 ;  6
+	endgroup
+
+DEF NUM_MAP_GROUPS EQU const_value ; 27

@@ -214,7 +214,7 @@ ElmsLookingForYouText:
 	text "Oh, <PLAYER>…! Our"
 	line "neighbor, PROF."
 
-	para "ELM, was looking"
+	para "UW, was looking"
 	line "for you."
 
 	para "He said he wanted"
@@ -291,7 +291,7 @@ InstructionsNextText:
 	done
 
 HurryUpElmIsWaitingText:
-	text "PROF.ELM is wait-"
+	text "PROF.UW is wait-"
 	line "ing for you."
 
 	para "Hurry up, baby!"
@@ -299,7 +299,7 @@ HurryUpElmIsWaitingText:
 
 SoWhatWasProfElmsErrandText:
 	text "So, what was PROF."
-	line "ELM's errand?"
+	line "UW's errand?"
 
 	para "…"
 
@@ -345,7 +345,7 @@ NeighborText:
 	line "adamant about"
 
 	para "becoming PROF."
-	line "ELM's assistant."
+	line "UW's assistant."
 
 	para "She really loves"
 	line "#MON!"
@@ -387,8 +387,8 @@ PlayersHouse1F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  6,  7, NEW_BARK_TOWN, 2
-	warp_event  7,  7, NEW_BARK_TOWN, 2
+	warp_event  6,  7, ALPHA_TOWN, 2
+	warp_event  7,  7, ALPHA_TOWN, 2
 	warp_event  9,  0, PLAYERS_HOUSE_2F, 1
 
 	def_coord_events

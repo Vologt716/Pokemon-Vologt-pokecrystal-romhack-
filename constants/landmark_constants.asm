@@ -98,6 +98,12 @@ DEF KANTO_LANDMARK EQU const_value
 	const LANDMARK_TOHJO_FALLS       ; 5d
 	const LANDMARK_ROUTE_28          ; 5e
 	const LANDMARK_FAST_SHIP         ; 5f
+DEF VOLOGT_LANDMARK EQU const_value
+	const LANDMARK_CITY_A            ; 60
+	const LANDMARK_ROUTE_47          ; 61
+	const LANDMARK_CITY_B            ; 62
+	const LANDMARK_ROUTE_48          ; 63
+	const LANDMARK_CITY_C            ; 64
 DEF NUM_LANDMARKS EQU const_value
 
 ; used in CaughtData
@@ -109,4 +115,5 @@ DEF NUM_LANDMARKS EQU const_value
 	const_def
 	const JOHTO_REGION ; 0
 	const KANTO_REGION ; 1
+	const VOLOGT_REGION ; 2
 DEF NUM_REGIONS EQU const_value

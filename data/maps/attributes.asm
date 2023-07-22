@@ -375,6 +375,24 @@ ENDM
 	connection north, Route10North, ROUTE_10_NORTH, 0
 	connection south, LavenderTown, LAVENDER_TOWN, 0
 
+	map_attributes AlphaTown, ALPHA_TOWN, $0f, SOUTH
+	connection south, RoutePsi, ROUTE_PSI, 0
+
+	map_attributes RoutePsi, ROUTE_PSI, $0f, NORTH | SOUTH
+	connection north, AlphaTown, ALPHA_TOWN, 0
+	connection south, BetaTown, BETA_TOWN, 0
+
+	map_attributes BetaTown, BETA_TOWN, $0f, NORTH | EAST
+	connection north, RoutePsi, ROUTE_PSI, 0
+	connection east, RouteOmega, ROUTE_OMEGA, 0
+
+	map_attributes RouteOmega, ROUTE_OMEGA, $0f, WEST | EAST
+	connection west, BetaTown, BETA_TOWN, 0
+	connection east, GammaTown, GAMMA_TOWN, 0
+
+	map_attributes GammaTown, GAMMA_TOWN, $0f, WEST
+	connection west, RouteOmega, ROUTE_OMEGA, 0
+
 	map_attributes Route23, ROUTE_23, $0f, 0
 	map_attributes SproutTower1F, SPROUT_TOWER_1F, $00, 0
 	map_attributes SproutTower2F, SPROUT_TOWER_2F, $00, 0
@@ -695,3 +713,5 @@ ENDM
 	map_attributes Route30BerryHouse, ROUTE_30_BERRY_HOUSE, $00, 0
 	map_attributes MrPokemonsHouse, MR_POKEMONS_HOUSE, $00, 0
 	map_attributes Route31VioletGate, ROUTE_31_VIOLET_GATE, $00, 0
+	map_attributes UwsLab, UWS_LAB, $00, 0
+	
