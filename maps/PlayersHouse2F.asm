@@ -3,7 +3,7 @@
 	const PLAYERSHOUSE2F_DOLL_1
 	const PLAYERSHOUSE2F_DOLL_2
 	const PLAYERSHOUSE2F_BIG_DOLL
-	const PLAYERSHOUSE2F_FISHER
+	const NEWBARKTOWN_FISHER
 
 PlayersHouse2F_MapScripts:
 	def_scene_scripts
@@ -20,6 +20,11 @@ PlayersHouse2FInitializeRoomCallback:
 	setevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_8
 	checkevent EVENT_INITIALIZED_EVENTS
 	iftrue .SkipInitialization
+; Adds a single Potion into the PC at the start of the game.
+    loadmem wNumPCItems, 1 ; Total number of item slots into the PC.
+    loadmem wPCItems, POTION ; Item ID in slot 1 of the PC.
+    loadmem wPCItems + 1, 1 ; Quantity of items in slot 1 of the PC.
+    loadmem wPCItems + 2, $ff ; Marks the end of the list.
 	jumpstd InitializeEventsScript
 	endcallback
 
@@ -92,9 +97,15 @@ PlayersHousePCScript:
 .Warp:
 	warp NONE, 0, 0
 	end
-	
-FatherScript:
-	jumptextfaceplayer Text_Father
+
+NewBarkTownFisherScript:
+	faceplayer
+	opentext
+	writetext Text_ElmDiscoveredNewMon
+	waitbutton
+	closetext
+	turnobject NEWBARKTOWN_FISHER, UP
+	end
 
 
 PlayersRadioText1:
@@ -116,14 +127,14 @@ PlayersRadioText4:
 	text "#MON!"
 	line "#MON CHANNEL…"
 	done
-	
-	Text_Father:
+
+Text_ElmDiscoveredNewMon:
 	text "DAD: Right."
 	line "All boys leave"
 	cont "home someday."
 	cont "It said so on TV."
 
-	para "PROF.UW, next"
+	para "ULYSSES, next"
 	line "door, is looking"
 	cont "for you."
 	done
@@ -147,4 +158,4 @@ PlayersHouse2F_MapEvents:
 	object_event  4,  4, SPRITE_DOLL_1, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PlayersHouseDoll1Script, EVENT_PLAYERS_HOUSE_2F_DOLL_1
 	object_event  5,  4, SPRITE_DOLL_2, SPRITEMOVEDATA_STILL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PlayersHouseDoll2Script, EVENT_PLAYERS_HOUSE_2F_DOLL_2
 	object_event  0,  1, SPRITE_BIG_DOLL, SPRITEMOVEDATA_BIGDOLL, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PlayersHouseBigDollScript, EVENT_PLAYERS_HOUSE_2F_BIG_DOLL
-	object_event  6,  1, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, FatherScript, EVENT_PLAYERS_HOUSE_2F_FATHER
+	object_event  6,  1, SPRITE_FISHER, SPRITEMOVEDATA_STANDING_UP, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkTownFisherScript, -1

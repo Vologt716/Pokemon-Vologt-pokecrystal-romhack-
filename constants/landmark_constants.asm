@@ -3,7 +3,7 @@
 	const LANDMARK_SPECIAL           ; 00
 ; Johto landmarks
 	const LANDMARK_NEW_BARK_TOWN     ; 01
-	const LANDMARK_ROUTE_29          ; 02
+	const LANDMARK_PALLET_TOWN       ; 02
 	const LANDMARK_CHERRYGROVE_CITY  ; 03
 	const LANDMARK_ROUTE_30          ; 04
 	const LANDMARK_ROUTE_31          ; 05
@@ -49,7 +49,7 @@
 	const LANDMARK_ROUTE_46          ; 2d
 	const LANDMARK_SILVER_CAVE       ; 2e
 DEF KANTO_LANDMARK EQU const_value
-	const LANDMARK_PALLET_TOWN       ; 2f
+	const LANDMARK_ROUTE_29          ; 2f
 	const LANDMARK_ROUTE_1           ; 30
 	const LANDMARK_VIRIDIAN_CITY     ; 31
 	const LANDMARK_ROUTE_2           ; 32
@@ -98,12 +98,6 @@ DEF KANTO_LANDMARK EQU const_value
 	const LANDMARK_TOHJO_FALLS       ; 5d
 	const LANDMARK_ROUTE_28          ; 5e
 	const LANDMARK_FAST_SHIP         ; 5f
-DEF VOLOGT_LANDMARK EQU const_value
-	const LANDMARK_CITY_A            ; 60
-	const LANDMARK_ROUTE_47          ; 61
-	const LANDMARK_CITY_B            ; 62
-	const LANDMARK_ROUTE_48          ; 63
-	const LANDMARK_CITY_C            ; 64
 DEF NUM_LANDMARKS EQU const_value
 
 ; used in CaughtData
@@ -115,5 +109,4 @@ DEF NUM_LANDMARKS EQU const_value
 	const_def
 	const JOHTO_REGION ; 0
 	const KANTO_REGION ; 1
-	const VOLOGT_REGION ; 2
 DEF NUM_REGIONS EQU const_value

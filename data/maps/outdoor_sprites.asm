@@ -30,8 +30,6 @@ OutdoorSprites:
 	dw NewBarkGroupSprites
 	dw SaffronGroupSprites
 	dw CherrygroveGroupSprites
-	dw FirstVologtSprites
-
 	assert_table_length NUM_MAP_GROUPS
 
 PalletGroupSprites:
@@ -333,6 +331,9 @@ NewBarkGroupSprites:
 	db SPRITE_COOLTRAINER_F
 	db SPRITE_POKE_BALL
 	db SPRITE_FRUIT_TREE
+	db SPRITE_ULYSSES
+	db SPRITE_SALIONY
+	db SPRITE_CLERK
 
 CherrygroveGroupSprites:
 	db SPRITE_SUICUNE
@@ -671,16 +672,3 @@ CableClubGroupSprites:
 	db SPRITE_FISHING_GURU
 	db SPRITE_POKE_BALL
 	db SPRITE_POKEDEX
-
-FirstVologtSprites:
-	db SPRITE_SUICUNE
-	db SPRITE_SILVER_TROPHY
-	db SPRITE_FAMICOM
-	db SPRITE_POKEDEX
-	db SPRITE_NURSE
-	db SPRITE_OLD_LINK_RECEPTIONIST
-	db SPRITE_LINK_RECEPTIONIST
-	db SPRITE_POKE_BALL
-	db SPRITE_SCIENTIST
-	db SPRITE_ULYSSES
-	db SPRITE_SALIONY
