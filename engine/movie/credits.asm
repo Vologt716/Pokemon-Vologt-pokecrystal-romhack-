@@ -97,6 +97,7 @@ Credits::
 
 .exit_credits
 	call ClearBGPalettes
+	call LoadStandardFont ; The new copyright breaks the font vram. We need to load it back.
 	xor a
 	ldh [hLCDCPointer], a
 	ldh [hBGMapAddress], a
@@ -256,7 +257,7 @@ ParseCredits:
 	cp CREDITS_END
 	jp z, .end
 	cp CREDITS_WAIT
-	jr z, .wait
+	jp z, .wait
 	cp CREDITS_SCENE
 	jr z, .scene
 	cp CREDITS_CLEAR
@@ -296,6 +297,16 @@ ParseCredits:
 
 .copyright
 	hlcoord 2, 6
+	push bc
+	push de
+	ld de, CopyrightGFX + 29 * 64 / 4
+	ld hl, vTiles1 tile 29
+	lb bc, BANK(CopyrightGFX), 15
+	call Request2bpp
+	pop de
+	pop bc
+
+	hlcoord 2, 5
 	jr .print
 
 .staff
@@ -328,7 +339,7 @@ ParseCredits:
 ; Clear the banner.
 	ld a, $ff
 	ld [wCreditsBorderFrame], a ; frame
-	jr .loop
+	jp .loop
 
 .music
 ; Play the credits music.
