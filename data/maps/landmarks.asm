@@ -9,7 +9,7 @@ Landmarks:
 	table_width 4, Landmarks
 	landmark  -8, -16, SpecialMapName
 	landmark 140, 100, NewBarkTownName
-	landmark  52, 108, PalletTownName
+	landmark 128, 100, Route29Name
 	landmark 100, 100, CherrygroveCityName
 	landmark 100,  80, Route30Name
 	landmark  96,  60, Route31Name
@@ -55,7 +55,7 @@ Landmarks:
 	landmark 124,  88, Route46Name
 	landmark 148,  68, SilverCaveName
 	assert_table_length KANTO_LANDMARK
-	landmark 128, 100, Route29Name
+	landmark  52, 108, PalletTownName
 	landmark  52,  92, Route1Name
 	landmark  52,  76, ViridianCityName
 	landmark  52,  64, Route2Name
@@ -106,8 +106,8 @@ Landmarks:
 	landmark 140, 116, FastShipName
 	assert_table_length NUM_LANDMARKS
 
-NewBarkTownName:     db "CITY¯A@"
-CherrygroveCityName: db "CITY¯B@"
+NewBarkTownName:     db "NEW BARK¯TOWN@"
+CherrygroveCityName: db "CHERRYGROVE¯CITY@"
 VioletCityName:      db "VIOLET CITY@"
 AzaleaTownName:      db "AZALEA TOWN@"
 GoldenrodCityName:   db "GOLDENROD¯CITY@"
@@ -132,7 +132,7 @@ MtMortarName:        db "MT.MORTAR@"
 DragonsDenName:      db "DRAGON'S¯DEN@"
 IcePathName:         db "ICE PATH@"
 NotApplicableName:   db "N/A@" ; unreferenced ; "オバケやしき" ("HAUNTED HOUSE") in Japanese
-Route29Name:         db "ROUTE 51@"
+PalletTownName:      db "PALLET TOWN@"
 ViridianCityName:    db "VIRIDIAN¯CITY@"
 PewterCityName:      db "PEWTER CITY@"
 CeruleanCityName:    db "CERULEAN¯CITY@"
@@ -173,14 +173,14 @@ Route18Name:         db "ROUTE 18@"
 Route19Name:         db "ROUTE 19@"
 Route20Name:         db "ROUTE 20@"
 Route21Name:         db "ROUTE 21@"
-Route22Name:         db "ROUTE 52@"
+Route22Name:         db "ROUTE 22@"
 Route23Name:         db "ROUTE 23@"
 Route24Name:         db "ROUTE 24@"
 Route25Name:         db "ROUTE 25@"
 Route26Name:         db "ROUTE 26@"
 Route27Name:         db "ROUTE 27@"
 Route28Name:         db "ROUTE 28@"
-PalletTownName:      db "CITY¯C@"
+Route29Name:         db "ROUTE 29@"
 Route30Name:         db "ROUTE 30@"
 Route31Name:         db "ROUTE 31@"
 Route32Name:         db "ROUTE 32@"

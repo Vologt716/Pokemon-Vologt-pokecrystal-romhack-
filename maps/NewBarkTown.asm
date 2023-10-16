@@ -1,7 +1,7 @@
 	object_const_def
 	const NEWBARKTOWN_TEACHER
-	const PALLETTOWN_TEACHER
-	const PALLETTOWN_FISHER
+	const NEWBARKTOWN_FISHER
+	const NEWBARKTOWN_RIVAL
 
 NewBarkTown_MapScripts:
 	def_scene_scripts
@@ -29,7 +29,7 @@ NewBarkTown_TeacherStopsYouScene1:
 	writetext Text_WaitPlayer
 	waitbutton
 	closetext
-	turnobject PLAYER, UP
+	turnobject PLAYER, RIGHT
 	applymovement NEWBARKTOWN_TEACHER, NewBarkTown_TeacherRunsToYouMovement1
 	opentext
 	writetext Text_WhatDoYouThinkYoureDoing
@@ -52,9 +52,9 @@ NewBarkTown_TeacherStopsYouScene2:
 	writetext Text_WaitPlayer
 	waitbutton
 	closetext
-	turnobject PLAYER, UP
+	turnobject PLAYER, RIGHT
 	applymovement NEWBARKTOWN_TEACHER, NewBarkTown_TeacherRunsToYouMovement2
-	turnobject PLAYER, LEFT
+	turnobject PLAYER, UP
 	opentext
 	writetext Text_WhatDoYouThinkYoureDoing
 	waitbutton
@@ -101,6 +101,30 @@ NewBarkTownTeacherScript:
 	closetext
 	end
 
+NewBarkTownFisherScript:
+	jumptextfaceplayer Text_ElmDiscoveredNewMon
+
+NewBarkTownRivalScript:
+	opentext
+	writetext NewBarkTownRivalText1
+	waitbutton
+	closetext
+	turnobject NEWBARKTOWN_RIVAL, LEFT
+	opentext
+	writetext NewBarkTownRivalText2
+	waitbutton
+	closetext
+	follow PLAYER, NEWBARKTOWN_RIVAL
+	applymovement PLAYER, NewBarkTown_RivalPushesYouAwayMovement
+	stopfollow
+	pause 5
+	turnobject NEWBARKTOWN_RIVAL, DOWN
+	pause 5
+	playsound SFX_TACKLE
+	applymovement PLAYER, NewBarkTown_RivalShovesYouOutMovement
+	applymovement NEWBARKTOWN_RIVAL, NewBarkTown_RivalReturnsToTheShadowsMovement
+	end
+
 NewBarkTownSign:
 	jumptext NewBarkTownSignText
 
@@ -110,67 +134,91 @@ NewBarkTownPlayersHouseSign:
 NewBarkTownElmsLabSign:
 	jumptext NewBarkTownElmsLabSignText
 
-PalletTownTeacherScript:
-	jumptextfaceplayer PalletTownTeacherText
-
-PalletTownFisherScript:
-	jumptextfaceplayer PalletTownFisherText
+NewBarkTownElmsHouseSign:
+	jumptext NewBarkTownElmsHouseSignText
 
 NewBarkTown_TeacherRunsToYouMovement1:
-	step DOWN
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
 	step_end
 
 NewBarkTown_TeacherRunsToYouMovement2:
-	step DOWN
-	step DOWN
-	turn_head RIGHT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	step LEFT
+	turn_head DOWN
 	step_end
 
 NewBarkTown_TeacherBringsYouBackMovement1:
-	step UP
-	turn_head DOWN
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	turn_head LEFT
 	step_end
 
 NewBarkTown_TeacherBringsYouBackMovement2:
-	step UP
-	step UP
-	turn_head DOWN
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	step RIGHT
+	turn_head LEFT
+	step_end
+
+NewBarkTown_RivalPushesYouAwayMovement:
+	turn_head UP
+	step DOWN
+	step_end
+
+NewBarkTown_RivalShovesYouOutMovement:
+	turn_head UP
+	fix_facing
+	jump_step DOWN
+	remove_fixed_facing
+	step_end
+
+NewBarkTown_RivalReturnsToTheShadowsMovement:
+	step RIGHT
 	step_end
 
 Text_GearIsImpressive:
-	text "SALIONY: Looks "
-	line "like you're late"
+	text "Wow, your #GEAR"
+	line "is impressive!"
 
-	para "getting your"
-	line "#MON starter."
+	para "Did your mom get"
+	line "it for you?"
 	done
 
 Text_WaitPlayer:
-	text "SALIONY: Wait!"
+	text "Wait, <PLAY_G>!"
 	done
 
 Text_WhatDoYouThinkYoureDoing:
-	text "What are you"
-	line "doing?"
+	text "What do you think"
+	line "you're doing?"
 	done
 
 Text_ItsDangerousToGoAlone:
-	text "I can't let you go"
-	line "out without"
+	text "It's dangerous to"
+	line "go out without a"
 	cont "#MON!"
 
-	para "Some disaster may"
-	line "happen to you"
+	para "Wild #MON"
+	line "jump out of the"
 
-	para "as long as I am "
-	line "responsible for"
-	cont "you."
+	para "grass on the way"
+	line "to the next town."
 	done
 
 Text_YourMonIsAdorable:
-	text "SALIONY: I hope"
-	line "you know what you"
-	cont "are going to do?"
+	text "Oh! Your #MON"
+	line "is adorable!"
+	cont "I wish I had one!"
 	done
 
 Text_TellMomIfLeaving:
@@ -190,11 +238,33 @@ Text_CallMomOnGear:
 	line "you're doing."
 	done
 
-NewBarkTownSignText:
-	text "CITY A"
+Text_ElmDiscoveredNewMon:
+	text "Yo, <PLAYER>!"
 
-	para "Hostel of show"
-	line "participants"
+	para "I hear PROF.ELM"
+	line "discovered some"
+	cont "new #MON."
+	done
+
+NewBarkTownRivalText1:
+	text "<……>"
+
+	para "So this is the"
+	line "famous ELM #MON"
+	cont "LAB…"
+	done
+
+NewBarkTownRivalText2:
+	text "…What are you"
+	line "staring at?"
+	done
+
+NewBarkTownSignText:
+	text "NEW BARK TOWN"
+
+	para "The Town Where the"
+	line "Winds of a New"
+	cont "Beginning Blow"
 	done
 
 NewBarkTownPlayersHouseSignText:
@@ -202,46 +272,33 @@ NewBarkTownPlayersHouseSignText:
 	done
 
 NewBarkTownElmsLabSignText:
-	text "WYBURNUM #MON"
-	line "LABORATORY"
+	text "ELM #MON LAB"
 	done
 
-PalletTownTeacherText:
-	text "I'm raising #-"
-	line "MON too."
-
-	para "When they get"
-	line "strong, they can"
-	cont "protect me!"
-	done
-
-PalletTownFisherText:
-	text "Technology is"
-	line "incredible!"
-
-	para "You can now store"
-	line "and recail items"
-	cont "and #MON as"
-	cont "data via PC!"
+NewBarkTownElmsHouseSignText:
+	text "ELM'S HOUSE"
 	done
 
 NewBarkTown_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  9, 13, ELMS_LAB, 1
-	warp_event  9,  7, PLAYERS_HOUSE_1F, 1
+	warp_event  6,  3, ELMS_LAB, 1
+	warp_event 13,  5, PLAYERS_HOUSE_1F, 1
+	warp_event  3, 11, PLAYERS_NEIGHBORS_HOUSE, 1
+	warp_event 11, 13, ELMS_HOUSE, 1
 
 	def_coord_events
-	coord_event  8, 16, SCENE_NEWBARKTOWN_TEACHER_STOPS_YOU, NewBarkTown_TeacherStopsYouScene1
-	coord_event  9, 16, SCENE_NEWBARKTOWN_TEACHER_STOPS_YOU, NewBarkTown_TeacherStopsYouScene2
+	coord_event  1,  8, SCENE_NEWBARKTOWN_TEACHER_STOPS_YOU, NewBarkTown_TeacherStopsYouScene1
+	coord_event  1,  9, SCENE_NEWBARKTOWN_TEACHER_STOPS_YOU, NewBarkTown_TeacherStopsYouScene2
 
 	def_bg_events
-	bg_event 13,  9, BGEVENT_READ, NewBarkTownSign
-	bg_event  7,  7, BGEVENT_READ, NewBarkTownPlayersHouseSign
-	bg_event  7, 13, BGEVENT_READ, NewBarkTownElmsLabSign
+	bg_event  8,  8, BGEVENT_READ, NewBarkTownSign
+	bg_event 11,  5, BGEVENT_READ, NewBarkTownPlayersHouseSign
+	bg_event  3,  3, BGEVENT_READ, NewBarkTownElmsLabSign
+	bg_event  9, 13, BGEVENT_READ, NewBarkTownElmsHouseSign
 
 	def_object_events
-	object_event  8, 14, SPRITE_SALIONY, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownTeacherScript, -1
-	object_event  3,  8, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PalletTownTeacherScript, -1
-	object_event 12, 14, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PalletTownFisherScript, -1
+	object_event  6,  8, SPRITE_TEACHER, SPRITEMOVEDATA_SPINRANDOM_SLOW, 1, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownTeacherScript, -1
+	object_event 12,  9, SPRITE_FISHER, SPRITEMOVEDATA_WALK_UP_DOWN, 0, 1, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, NewBarkTownFisherScript, -1
+	object_event  3,  2, SPRITE_RIVAL, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, NewBarkTownRivalScript, EVENT_RIVAL_NEW_BARK_TOWN

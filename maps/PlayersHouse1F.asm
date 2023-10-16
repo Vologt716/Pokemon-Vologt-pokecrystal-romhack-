@@ -39,6 +39,8 @@ MeetMomScript:
 	getstring STRING_BUFFER_4, PokegearName
 	scall PlayersHouse1FReceiveItemStd
 	setflag ENGINE_POKEGEAR
+	setflag ENGINE_PHONE_CARD
+	addcellnum PHONE_MOM
 	setscene SCENE_PLAYERSHOUSE1F_NOOP
 	setevent EVENT_PLAYERS_HOUSE_MOM_1
 	clearevent EVENT_PLAYERS_HOUSE_MOM_2
@@ -60,6 +62,22 @@ MeetMomScript:
 	iffalse .SetDayOfWeek
 .DayOfWeekDone:
 	writetext ComeHomeForDSTText
+	yesorno
+	iffalse .ExplainPhone
+	sjump .KnowPhone
+
+.KnowPhone:
+	writetext KnowTheInstructionsText
+	promptbutton
+	sjump .FinishPhone
+
+.ExplainPhone:
+	writetext DontKnowTheInstructionsText
+	promptbutton
+	sjump .FinishPhone
+
+.FinishPhone:
+	writetext InstructionsNextText
 	waitbutton
 	closetext
 	checkevent EVENT_TEMPORARY_UNTIL_MAP_RELOAD_1
@@ -194,9 +212,9 @@ MomWalksBackMovement:
 
 ElmsLookingForYouText:
 	text "Oh, <PLAYER>…! Our"
-	line "neighbor, ULYSSES,"
+	line "neighbor, PROF."
 
-	para "was looking"
+	para "ELM, was looking"
 	line "for you."
 
 	para "He said he wanted"
@@ -238,18 +256,50 @@ ComeHomeForDSTText:
 
 	para "for Daylight"
 	line "Saving Time."
+
+	para "By the way, do you"
+	line "know how to use"
+	cont "the PHONE?"
+	done
+
+KnowTheInstructionsText:
+	text "Don't you just"
+	line "turn the #GEAR"
+
+	para "on and select the"
+	line "PHONE icon?"
+	done
+
+DontKnowTheInstructionsText:
+	text "I'll read the"
+	line "instructions."
+
+	para "Turn the #GEAR"
+	line "on and select the"
+	cont "PHONE icon."
+	done
+
+InstructionsNextText:
+	text "Phone numbers are"
+	line "stored in memory."
+
+	para "Just choose a name"
+	line "you want to call."
+
+	para "Gee, isn't that"
+	line "convenient?"
 	done
 
 HurryUpElmIsWaitingText:
-	text "ULYSSES is wait-"
+	text "PROF.ELM is wait-"
 	line "ing for you."
 
 	para "Hurry up, baby!"
 	done
 
 SoWhatWasProfElmsErrandText:
-	text "So, what was"
-	line "ULYSSES's errand?"
+	text "So, what was PROF."
+	line "ELM's errand?"
 
 	para "…"
 
@@ -294,8 +344,8 @@ NeighborText:
 	para "My daughter is"
 	line "adamant about"
 
-	para "becoming ULYS-"
-	line "SES's assistant."
+	para "becoming PROF."
+	line "ELM's assistant."
 
 	para "She really loves"
 	line "#MON!"
@@ -352,8 +402,8 @@ PlayersHouse1F_MapEvents:
 	bg_event  4,  1, BGEVENT_READ, PlayersHouse1FTVScript
 
 	def_object_events
-	object_event  7,  4, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_1
-	object_event  2,  2, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, MORN, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
-	object_event  7,  4, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, DAY, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
-	object_event  0,  2, SPRITE_TEACHER, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, NITE, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
+	object_event  7,  4, SPRITE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_1
+	object_event  2,  2, SPRITE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, MORN, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
+	object_event  7,  4, SPRITE_MOM, SPRITEMOVEDATA_STANDING_LEFT, 0, 0, -1, DAY, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
+	object_event  0,  2, SPRITE_MOM, SPRITEMOVEDATA_STANDING_UP, 0, 0, -1, NITE, 0, OBJECTTYPE_SCRIPT, 0, MomScript, EVENT_PLAYERS_HOUSE_MOM_2
 	object_event  4,  4, SPRITE_POKEFAN_F, SPRITEMOVEDATA_STANDING_RIGHT, 0, 0, -1, -1, PAL_NPC_RED, OBJECTTYPE_SCRIPT, 0, NeighborScript, EVENT_PLAYERS_HOUSE_1F_NEIGHBOR

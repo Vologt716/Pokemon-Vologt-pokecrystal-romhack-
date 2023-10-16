@@ -36,7 +36,6 @@
 	const EVENT_GOT_CYNDAQUIL_FROM_ELM
 	const EVENT_GOT_TOTODILE_FROM_ELM
 	const EVENT_GOT_CHIKORITA_FROM_ELM
-	const EVENT_GOT_DITTO_FROM_ELM
 	const EVENT_GOT_MYSTERY_EGG_FROM_MR_POKEMON
 	const EVENT_GAVE_MYSTERY_EGG_TO_ELM
 	const EVENT_JASMINE_RETURNED_TO_GYM
@@ -1054,7 +1053,6 @@
 	const EVENT_CYNDAQUIL_POKEBALL_IN_ELMS_LAB
 	const EVENT_TOTODILE_POKEBALL_IN_ELMS_LAB
 	const EVENT_CHIKORITA_POKEBALL_IN_ELMS_LAB
-	const EVENT_DITTO_POKEBALL_IN_ELMS_LAB
 	const EVENT_VIOLET_CITY_PP_UP
 	const EVENT_VIOLET_CITY_RARE_CANDY
 	const EVENT_LAKE_OF_RAGE_ELIXER
@@ -1357,7 +1355,7 @@
 ; (In pokegold the previous 4 event flags were not defined,
 ; but in pokecrystal the 'const_next 1900' is redundant.)
 
-	const_next 1901
+	const_next 1900
 ; Kanto people
 	const EVENT_ROUTE_24_ROCKET
 	const EVENT_CERULEAN_GYM_ROCKET
@@ -1463,5 +1461,5 @@
 	const EVENT_BATTLE_TOWER_OPEN_CIVILIANS
 ; Unused: next 48 events
 
-	const_next 2049
+	const_next 2048
 DEF NUM_EVENTS EQU const_value ; 800

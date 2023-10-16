@@ -97,12 +97,13 @@ MACRO connection
 ENDM
 
 
-	map_attributes NewBarkTown, NEW_BARK_TOWN, $0f, SOUTH
-	connection south, Route29, ROUTE_29, 0
+	map_attributes NewBarkTown, NEW_BARK_TOWN, $05, WEST | EAST
+	connection west, Route29, ROUTE_29, 0
+	connection east, Route27, ROUTE_27, 0
 
-	map_attributes CherrygroveCity, CHERRYGROVE_CITY, $0f, NORTH | EAST
-	connection north, Route29, ROUTE_29, 0
-	connection east, Route22, ROUTE_22, 0
+	map_attributes CherrygroveCity, CHERRYGROVE_CITY, $35, NORTH | EAST
+	connection north, Route30, ROUTE_30, 5
+	connection east, Route29, ROUTE_29, 0
 
 	map_attributes VioletCity, VIOLET_CITY, $05, SOUTH | WEST | EAST
 	connection south, Route32, ROUTE_32, 0
@@ -147,15 +148,17 @@ ENDM
 	map_attributes Route26, ROUTE_26, $05, WEST
 	connection west, Route27, ROUTE_27, 45
 
-	map_attributes Route27, ROUTE_27, $35, EAST
+	map_attributes Route27, ROUTE_27, $35, WEST | EAST
+	connection west, NewBarkTown, NEW_BARK_TOWN, 0
 	connection east, Route26, ROUTE_26, -45
 
 	map_attributes Route28, ROUTE_28, $2c, WEST
 	connection west, SilverCaveOutside, SILVER_CAVE_OUTSIDE, -9
 
-	map_attributes Route29, ROUTE_29, $0f, NORTH | SOUTH
-	connection north, NewBarkTown, NEW_BARK_TOWN, 0
-	connection south, CherrygroveCity, CHERRYGROVE_CITY, 0
+	map_attributes Route29, ROUTE_29, $05, NORTH | WEST | EAST
+	connection north, Route46, ROUTE_46, 10
+	connection west, CherrygroveCity, CHERRYGROVE_CITY, 0
+	connection east, NewBarkTown, NEW_BARK_TOWN, 0
 
 	map_attributes Route30, ROUTE_30, $05, NORTH | SOUTH
 	connection north, Route31, ROUTE_31, -10
@@ -234,21 +237,24 @@ ENDM
 	connection north, PewterCity, PEWTER_CITY, -5
 	connection south, ViridianCity, VIRIDIAN_CITY, -5
 
-	map_attributes ViridianCity, VIRIDIAN_CITY, $0f, NORTH | SOUTH
+	map_attributes ViridianCity, VIRIDIAN_CITY, $0f, NORTH | SOUTH | WEST
 	connection north, Route2, ROUTE_2, 5
 	connection south, Route1, ROUTE_1, 10
+	connection west, Route22, ROUTE_22, 4
 
-	map_attributes Route22, ROUTE_22, $0f, WEST | EAST
-	connection west, CherrygroveCity, CHERRYGROVE_CITY, 0
-	connection east, PalletTown, PALLET_TOWN, 0
+	map_attributes Route22, ROUTE_22, $2c, EAST
+	connection east, ViridianCity, VIRIDIAN_CITY, -4
 
-	map_attributes Route1, ROUTE_1, $0f, NORTH
+	map_attributes Route1, ROUTE_1, $0f, NORTH | SOUTH
 	connection north, ViridianCity, VIRIDIAN_CITY, -10
+	connection south, PalletTown, PALLET_TOWN, 0
 
-	map_attributes PalletTown, PALLET_TOWN, $0f, WEST
-	connection west, Route22, ROUTE_22, 0
+	map_attributes PalletTown, PALLET_TOWN, $0f, NORTH | SOUTH
+	connection north, Route1, ROUTE_1, 0
+	connection south, Route21, ROUTE_21, 0
 
-	map_attributes Route21, ROUTE_21, $43, SOUTH
+	map_attributes Route21, ROUTE_21, $43, NORTH | SOUTH
+	connection north, PalletTown, PALLET_TOWN, 0
 	connection south, CinnabarIsland, CINNABAR_ISLAND, 0
 
 	map_attributes CinnabarIsland, CINNABAR_ISLAND, $43, NORTH | EAST
