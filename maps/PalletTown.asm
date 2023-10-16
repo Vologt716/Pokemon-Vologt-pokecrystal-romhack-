@@ -1,4 +1,6 @@
 	object_const_def
+	const PALLETTOWN_TEACHER
+	const PALLETTOWN_FISHER
 
 PalletTown_MapScripts:
 	def_scene_scripts
@@ -9,6 +11,12 @@ PalletTown_MapScripts:
 PalletTownFlypointCallback:
 	setflag ENGINE_FLYPOINT_PALLET
 	endcallback
+
+PalletTownTeacherScript:
+	jumptextfaceplayer PalletTownTeacherText
+
+PalletTownFisherScript:
+	jumptextfaceplayer PalletTownFisherText
 
 PalletTownSign:
 	jumptext PalletTownSignText
@@ -21,6 +29,23 @@ OaksLabSign:
 
 BluesHouseSign:
 	jumptext BluesHouseSignText
+
+PalletTownTeacherText:
+	text "I'm raising #-"
+	line "MON too."
+
+	para "They serve as my"
+	line "private guards."
+	done
+
+PalletTownFisherText:
+	text "Technology is"
+	line "incredible!"
+
+	para "You can now trade"
+	line "#MON across"
+	cont "time like e-mail."
+	done
 
 PalletTownSignText:
 	text "PALLET TOWN"
@@ -59,3 +84,5 @@ PalletTown_MapEvents:
 	bg_event 11,  5, BGEVENT_READ, BluesHouseSign
 
 	def_object_events
+	object_event  3,  8, SPRITE_TEACHER, SPRITEMOVEDATA_WANDER, 2, 2, -1, -1, 0, OBJECTTYPE_SCRIPT, 0, PalletTownTeacherScript, -1
+	object_event 12, 14, SPRITE_FISHER, SPRITEMOVEDATA_WALK_LEFT_RIGHT, 2, 0, -1, -1, PAL_NPC_GREEN, OBJECTTYPE_SCRIPT, 0, PalletTownFisherScript, -1

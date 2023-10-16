@@ -268,11 +268,4 @@ JohtoWaterWildMons:
 	db 35, POLIWAG
 	end_water_wildmons
 
-	def_water_wildmons PALLET_TOWN
-	db 6 percent ; encounter rate
-	db 35, TENTACOOL
-	db 30, TENTACOOL
-	db 35, TENTACRUEL
-	end_water_wildmons
-
 	db -1 ; end
