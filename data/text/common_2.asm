@@ -626,7 +626,7 @@ _ThrewAwayText::
 	prompt
 
 _OakThisIsntTheTimeText::
-	text "OAK: <PLAYER>!"
+	text "ULYSSES: <PLAYER>!"
 	line "This isn't the"
 	cont "time to use that!"
 	prompt

@@ -527,8 +527,8 @@ SSTicketDesc:
 	next "S.S.AQUA.@"
 
 MysteryEggDesc:
-	db   "An EGG obtained"
-	next "from MR.#MON.@"
+	db   "Package with im-"
+	next "portant documents.@"
 
 ClearBellDesc:
 	db   "Makes a gentle"
