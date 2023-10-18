@@ -1,5 +1,4 @@
 	object_const_def
-	const ROUTE29_COOLTRAINER_M1
 	const ROUTE29_YOUNGSTER
 	const ROUTE29_FRUIT_TREE
 	const ROUTE29_FISHER
