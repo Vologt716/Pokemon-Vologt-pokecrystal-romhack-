@@ -456,8 +456,8 @@ ENDM
 	newgroup NEW_BARK                                             ; 24
 	map_const ROUTE_26,                                    10, 54 ;  1
 	map_const ROUTE_27,                                    40,  9 ;  2
-	map_const ROUTE_29,                                    9,  16 ;  3
-	map_const NEW_BARK_TOWN,                               9,  9 ;  4
+	map_const ROUTE_29,                                     9, 16 ;  3
+	map_const NEW_BARK_TOWN,                                9,  9 ;  4
 	map_const ELMS_LAB,                                     5,  6 ;  5
 	map_const PLAYERS_HOUSE_1F,                             5,  4 ;  6
 	map_const PLAYERS_HOUSE_2F,                             4,  3 ;  7
@@ -490,7 +490,7 @@ ENDM
 	newgroup CHERRYGROVE                                          ; 26
 	map_const ROUTE_30,                                    10, 27 ;  1
 	map_const ROUTE_31,                                    20,  9 ;  2
-	map_const CHERRYGROVE_CITY,                            9,  9 ;  3
+	map_const CHERRYGROVE_CITY,                             9,  9 ;  3
 	map_const CHERRYGROVE_MART,                             6,  4 ;  4
 	map_const CHERRYGROVE_POKECENTER_1F,                    5,  4 ;  5
 	map_const CHERRYGROVE_GYM_SPEECH_HOUSE,                 4,  4 ;  6
@@ -501,4 +501,11 @@ ENDM
 	map_const ROUTE_31_VIOLET_GATE,                         5,  4 ; 11
 	endgroup
 
-DEF NUM_MAP_GROUPS EQU const_value ; 26
+	newgroup FIRST_VOLOGT                                         ; 27
+	map_const FARM_GATE,                                    9,  9 ;  1
+	map_const STARTERS_FARM,                               16, 16 ;  2
+	map_const EMPLOYEES_ONLY,                              14, 14 ;  3
+	map_const SHORT_CUT,                                   16, 16 ;  4
+	endgroup
+
+DEF NUM_MAP_GROUPS EQU const_value ; 27

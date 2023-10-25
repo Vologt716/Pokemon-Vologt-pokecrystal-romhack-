@@ -1045,3 +1045,17 @@ BetaBlank_Blocks: ; unreferenced
 
 GoldenrodDeptStoreRoof_Blocks:
 	INCBIN "maps/GoldenrodDeptStoreRoof.blk"
+
+SECTION "Map Blocks 4", ROMX
+
+FarmGate_Blocks:
+	INCBIN "maps/FarmGate.blk"
+
+StartersFarm_Blocks:
+	INCBIN "maps/StartersFarm.blk"
+
+EmployeesOnly_Blocks:
+	INCBIN "maps/EmployeesOnly.blk"
+
+ShortCut_Blocks:
+	INCBIN "maps/ShortCut.blk"

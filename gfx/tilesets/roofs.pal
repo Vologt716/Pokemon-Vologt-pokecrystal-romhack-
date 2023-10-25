@@ -105,3 +105,7 @@
 ; group 26 (Cherrygrove)
 	RGB 27,28,31, 17,19,22 ; morn/day
 	RGB 14,14,18, 10,09,13 ; nite
+
+; group 17 (First Vologt)
+	RGB 21,21,21, 11,11,11 ; morn/day
+	RGB 21,21,21, 17,08,07 ; nite

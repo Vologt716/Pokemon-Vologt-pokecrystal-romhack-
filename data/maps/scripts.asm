@@ -484,3 +484,7 @@ SECTION "Map Scripts 25", ROMX
 
 INCLUDE "maps/SilverCaveOutside.asm"
 INCLUDE "maps/Route10North.asm"
+INCLUDE "maps/FarmGate.asm"
+INCLUDE "maps/StartersFarm.asm"
+INCLUDE "maps/EmployeesOnly.asm"
+INCLUDE "maps/ShortCut.asm"

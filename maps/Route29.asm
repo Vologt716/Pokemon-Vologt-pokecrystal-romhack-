@@ -1,5 +1,4 @@
 	object_const_def
-	const ROUTE29_COOLTRAINER_M1
 	const ROUTE29_YOUNGSTER
 	const ROUTE29_FRUIT_TREE
 	const ROUTE29_FISHER
@@ -260,6 +259,7 @@ Route29_MapEvents:
 
 	def_warp_events
 	warp_event 1,  14, ROUTE_29_ROUTE_46_GATE, 3
+	warp_event  2,  3, EMPLOYEES_ONLY, 1
 
 	def_coord_events
 

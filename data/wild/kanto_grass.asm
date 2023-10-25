@@ -870,4 +870,60 @@ KantoGrassWildMons:
 	db 3, HOOTHOOT
 	end_grass_wildmons
 	
+	def_grass_wildmons STARTERS_FARM
+	db 2 percent, 2 percent, 2 percent ; encounter rates: morn/day/nite
+	; morn
+	db 5, BULBASAUR
+	db 5, CHIKORITA
+	db 5, CHARMANDER
+	db 5, CYNDAQUIL
+	db 5, EEVEE
+	db 5, SQUIRTLE
+	db 5, TOTODILE
+	; day
+	db 5, CHARMANDER
+	db 5, CYNDAQUIL
+	db 5, SQUIRTLE
+	db 5, TOTODILE
+	db 5, EEVEE
+	db 5, BULBASAUR
+	db 5, CHIKORITA
+	; nite
+	db 5, SQUIRTLE
+	db 5, TOTODILE
+	db 5, BULBASAUR
+	db 5, CHIKORITA
+	db 5, EEVEE
+	db 5, CHARMANDER
+	db 5, CYNDAQUIL
+	end_grass_wildmons
+
+	def_grass_wildmons SHORT_CUT
+	db 6 percent, 6 percent, 6 percent ; encounter rates: morn/day/nite
+	; morn
+	db 5, UNOWN
+	db 5, UNOWN
+	db 5, UNOWN
+	db 5, UNOWN
+	db 5, UNOWN
+	db 5, UNOWN
+	db 5, UNOWN
+	; day
+	db 5, UNOWN
+	db 5, UNOWN
+	db 5, UNOWN
+	db 5, UNOWN
+	db 5, UNOWN
+	db 5, UNOWN
+	db 5, UNOWN
+	; nite
+	db 5, UNOWN
+	db 5, UNOWN
+	db 5, UNOWN
+	db 5, UNOWN
+	db 5, UNOWN
+	db 5, UNOWN
+	db 5, UNOWN
+	end_grass_wildmons
+
 	db -1 ; end
